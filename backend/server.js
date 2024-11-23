@@ -34,14 +34,14 @@ app.use(express.urlencoded({ extended: false }))
 
 const PORT = process.env.PORT || 3000;
 
-app.use("/api/auth", user);
-app.use("/api/blog", blogRoutes);
-app.use("/api/users", crud);
-app.use("/api/college",college)
-app.use("/api/event",eventRoutes);
-app.use("/api/asd",eventRoutes)
-app.use("/api/home",homepageRoutes);
-app.use("/api/collegeRep",collegeRep)
+// app.use("/api/auth", user);
+// app.use("/api/blog", blogRoutes);
+// app.use("/api/users", crud);
+// app.use("/api/college",college)
+// app.use("/api/event",eventRoutes);
+// app.use("/api/asd",eventRoutes)
+// app.use("/api/home",homepageRoutes);
+// app.use("/api/collegeRep",collegeRep)
 
 app.get("/", (req, res) => {
     res.json("Hello");
