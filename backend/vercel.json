@@ -1,44 +1,14 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "api/**/*.js",
-        "use": "@vercel/node"
-      }
+    "installCommand": "npm install --legacy-peer-deps",
+    "version":2,
+    "builds":[
+        {"src" : "server.js", "use": "@vercel/node"},
+        {"src" : "src/**/**", "use": "@vercel/static"}
     ],
-    "routes": [
-      {
-        "src": "/api/auth(.*)",
-        "dest": "/api/auth.js"
-      },
-      {
-        "src": "/api/blog(.*)",
-        "dest": "/api/blog.js"
-      },
-      {
-        "src": "/api/users(.*)",
-        "dest": "/api/users.js"
-      },
-      {
-        "src": "/api/college(.*)",
-        "dest": "/api/college.js"
-      },
-      {
-        "src": "/api/event(.*)",
-        "dest": "/api/event.js"
-      },
-      {
-        "src": "/api/home(.*)",
-        "dest": "/api/home.js"
-      },
-      {
-        "src": "/api/collegeRep(.*)",
-        "dest": "/api/collegeRep.js"
-      },
-      {
-        "src": "/",
-        "dest": "/api/server.js" 
-      }
+    "routes":[
+        {
+            "src":"/(.*)",
+            "dest":"/"
+        }
     ]
-  }
-  
+}
