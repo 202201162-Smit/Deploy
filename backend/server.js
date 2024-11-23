@@ -44,7 +44,7 @@ app.use("/api/home",homepageRoutes);
 app.use("/api/collegeRep",collegeRep)
 
 app.get("/", (req, res) => {
-    res.josn("Hello");
+    res.json("Hello");
 })
 
 connectDb().then(() => {
