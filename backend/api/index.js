@@ -1,15 +1,15 @@
 const express = require('express');
 const cors = require('cors');
-const user = require("./routes/user");
-const connectDb = require("./config/dbconnection");
-const blogRoutes = require('./routes/blogRoutes'); // Import the blog routes
-const crud = require('./routes/crud')
-const college = require('./routes/college')
-const {cloudinaryConnect }= require("../backend/config/cloudinary")
+const user = require("../routes/user");
+const connectDb = require("../config/dbconnection");
+const blogRoutes = require('../routes/blogRoutes'); // Import the blog routes
+const crud = require('../routes/crud')
+const college = require('../routes/college')
+const {cloudinaryConnect }= require("../config/cloudinary")
 require("dotenv").config();
-const eventRoutes = require("./routes/eventRoutes")
-const homepageRoutes = require("./routes/homepageRoutes")
-const collegeRep=require('./routes/collegeRep')
+const eventRoutes = require("../routes/eventRoutes")
+const homepageRoutes = require("../routes/homepageRoutes")
+const collegeRep=require('../routes/collegeRep')
 const app = express();
 
 const corsOptions = {
