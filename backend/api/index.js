@@ -15,7 +15,7 @@ const app = express();
 
 const corsOptions = {
     // origin: "http://localhost:5173",
-    origin: "https://event-sphere-g11.vercel.app",
+    origin: "https://event-sphere-g11.vercel.app/",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD"],
     allowedHeaders:["Content-Type"],
     credentials: true,
