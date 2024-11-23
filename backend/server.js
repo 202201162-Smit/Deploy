@@ -1,24 +1,5 @@
 const express = require('express');
-const cors = require('cors');
-const user = require("./routes/user");
-const connectDb = require("./config/dbconnection");
-const blogRoutes = require('./routes/blogRoutes'); // Import the blog routes
-const crud = require('./routes/crud')
-const college = require('./routes/college')
-const {cloudinaryConnect }= require("../backend/config/cloudinary")
-require("dotenv").config();
-const eventRoutes = require("./routes/eventRoutes")
-const homepageRoutes = require("./routes/homepageRoutes")
-const collegeRep=require('./routes/collegeRep')
 const app = express();
-
-const corsOptions = {
-    origin: "http://localhost:5173",
-    // origin: "*",
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD"],
-    allowedHeaders:["Content-Type"],
-    credentials: true,
-};
 
 
 app.use((req, res, next) => {
@@ -27,10 +8,7 @@ app.use((req, res, next) => {
     next();
   });
 
-app.use(cors(corsOptions));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }))
-
 
 const PORT = process.env.PORT || 3000;
 
@@ -44,12 +22,9 @@ const PORT = process.env.PORT || 3000;
 // app.use("/api/collegeRep",collegeRep)
 
 app.get("/", (req, res) => {
-    res.json("Hello");
+    res.json("Hi");
 })
 
-connectDb().then(() => {
     app.listen(PORT, () => {
         console.log(`Server is running at port: ${PORT}`);
     });
-});
-cloudinaryConnect();
