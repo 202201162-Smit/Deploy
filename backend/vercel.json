@@ -36,8 +36,8 @@
         "dest": "/api/collegeRep.js"
       },
       {
-        "src": "/(.*)",
-        "dest": "/api/index.js"
+        "src": "/",
+        "dest": "/api/index.js" 
       }
     ]
   }
