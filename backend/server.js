@@ -43,6 +43,10 @@ app.use("/api/asd",eventRoutes)
 app.use("/api/home",homepageRoutes);
 app.use("/api/collegeRep",collegeRep)
 
+app.get("/", (req, res) => {
+    res.josn("Hello");
+})
+
 connectDb().then(() => {
     app.listen(PORT, () => {
         console.log(`Server is running at port: ${PORT}`);
