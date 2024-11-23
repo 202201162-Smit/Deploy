@@ -6,7 +6,8 @@ const blogRoutes = require('../routes/blogRoutes'); // Import the blog routes
 const crud = require('../routes/crud')
 const college = require('../routes/college')
 const {cloudinaryConnect }= require("../config/cloudinary")
-require("dotenv").config();
+const path = require("path");
+require("dotenv").config({path : path.resolve(__dirname, "../.env")});
 const eventRoutes = require("../routes/eventRoutes")
 const homepageRoutes = require("../routes/homepageRoutes")
 const collegeRep=require('../routes/collegeRep')
@@ -21,6 +22,7 @@ const corsOptions = {
 };
 
 
+
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
@@ -32,7 +34,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
 
 
-const PORT = process.env.PORT || 3000;
+const PORT =  3000;
 
 app.use("/api/auth", user);
 app.use("/api/blog", blogRoutes);
@@ -47,11 +49,12 @@ app.get("/", (req, res) => {
     res.send("Hello");
 })
 
-// connectDb().then(() => {
+connectDb().then(() => {
     app.listen(PORT, () => {
+        console.log(process.env.PORT)
         console.log(`Server is running at port: ${PORT}`);
     });
-// });
+});
 cloudinaryConnect();
 
 module.exports = app;
