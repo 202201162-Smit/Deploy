@@ -53,3 +53,5 @@ connectDb().then(() => {
     });
 });
 cloudinaryConnect();
+
+module.exports = app;
