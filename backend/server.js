@@ -21,9 +21,9 @@ const PORT = process.env.PORT || 3000;
 // app.use("/api/home",homepageRoutes);
 // app.use("/api/collegeRep",collegeRep)
 
-app.get("/", (req, res) => {
-    res.json("Hi");
-})
+// app.get("/", (req, res) => {
+//     res.json("Hi");
+// })
 
     app.listen(PORT, () => {
         console.log(`Server is running at port: ${PORT}`);
