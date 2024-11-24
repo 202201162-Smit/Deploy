@@ -28,7 +28,13 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     res.header(
         'Content-Security-Policy',
-        "default-src 'self'; script-src 'self' https://vercel.live; object-src 'none';"
+        "default-src 'self' https://vercel.live; " +
+        "script-src 'self' https://vercel.live 'unsafe-inline'; " +
+        "style-src 'self' 'unsafe-inline'; " +
+        "img-src 'self' data:; " +
+        "font-src 'self'; " +
+        "connect-src 'self' https://vercel.live; " +
+        "object-src 'none';"
     );
     next();
   });
